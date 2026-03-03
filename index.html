@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtherOS Installer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --temple-bg: #000000;
+            --temple-yellow: #FFFF00;
+            --temple-blue: #0000FF;
+            --temple-text: #000000;
+        }
+
+        body {
+            font-family: monospace, sans-serif;
+            background-color: #000000;
+            color: #ffffff;
+            min-height: 100vh;
+            overflow-y: auto; /* SCROLLING WORKS */
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ---- STAR BACKGROUND ---- */
+        #stars-bg {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        @keyframes twinkle-pulse {
+            0%   { opacity: 0.7; transform: scale(0.95); }
+            100% { opacity: 1;   transform: scale(1.05); }
+        }
+
+        .star-layer {
+            position: absolute;
+            width: 1px; height: 1px;
+            background: transparent;
+            filter: drop-shadow(0 0 1px rgba(255,255,255,0.5));
+            animation: twinkle-pulse 5s infinite alternate;
+        }
+
+        #stars1 {
+            box-shadow:
+                10vw 15vh 0 1.5px #FF4500,
+                50vw 80vh 0 1.5px #FFFF00,
+                80vw 20vh 0 1.5px #00FF7F,
+                25vw 55vh 0 1.5px #1E90FF,
+                90vw 10vh 0 1.5px #FF69B4,
+                70vw 60vh 0 1.5px #FF4500,
+                15vw 90vh 0 1.5px #FFFF00;
+        }
+        #stars2 {
+            box-shadow:
+                5vw  45vh 0 1px #8A2BE2,
+                35vw 70vh 0 1px #00FFFF,
+                75vw 95vh 0 1px #FFD700,
+                60vw 15vh 0 1px #F08080,
+                25vw 40vh 0 1px #7CFC00,
+                95vw 50vh 0 1px #FF4500,
+                45vw 10vh 0 1px #FF55FF;
+            animation-delay: 1s;
+        }
+        #stars3 {
+            box-shadow:
+                15vw  5vh 0 0.5px #FF1493,
+                45vw 25vh 0 0.5px #ADFF2F,
+                65vw 50vh 0 0.5px #4682B4,
+                 5vw 10vh 0 0.5px #DDA0DD,
+                85vw 35vh 0 0.5px #F5F5DC,
+                25vw 95vh 0 0.5px #FFD700,
+                55vw 75vh 0 0.5px #FF69B4;
+            animation-delay: 2s;
+        }
+
+        /* ---- CONTENT LAYER ---- */
+        .content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo-text {
+            font-size: 5rem;
+            font-weight: bold;
+            color: var(--temple-yellow);
+            text-shadow:
+                -3px -3px 0 #000,
+                 3px -3px 0 #000,
+                -3px  3px 0 #000,
+                 3px  3px 0 #000;
+            line-height: 0.8;
+            letter-spacing: -3px;
+        }
+
+        .temple-block {
+            background-color: var(--temple-yellow);
+            border: 2px solid #000;
+            color: #000;
+            border-radius: 0;
+        }
+
+        .download-button {
+            background-color: #555555 !important;
+            color: #FFFFF1 !important;
+            border: 2px solid #000 !important;
+            border-radius: 0;
+            text-shadow: 1px 1px 0 #000;
+            font-family: monospace;
+            cursor: pointer;
+        }
+
+        #rainbow-message-container span {
+            display: inline-block;
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: { extend: { fontFamily: { sans: ['monospace', 'sans-serif'] } } }
+        }
+    </script>
+</head>
+<body>
+
+    <!-- Star background (fixed, behind everything) -->
+    <div id="stars-bg">
+        <div id="stars1" class="star-layer"></div>
+        <div id="stars2" class="star-layer"></div>
+        <div id="stars3" class="star-layer"></div>
+    </div>
+
+    <!-- All page content -->
+    <div class="content p-4 sm:p-8">
+        <div class="max-w-xl mx-auto space-y-8">
+
+            <!-- Header -->
+            <header class="mb-8 text-center pt-8">
+                <pre class="text-white font-bold text-xs leading-tight mx-auto inline-block text-left"> /_\
+</pre>
+                <div class="logo-text">EtherOS</div>
+                <h1 class="text-xl font-bold mt-4 text-blue-400">INSTALL ETHEROS HERE!!!</h1>
+                <p class="text-sm mt-4">
+
+            <!-- Main block -->
+            <div class="temple-block p-6">
+                <h2 class="text-2xl font-bold mb-4 text-blue-700 underline">ether updates</h2>
+
+                <p class="text-xl font-bold text-black">
+                    EtherOS v1.0.0 | Terry A. Davis (1969 - 2018). Rest in peace
+                </p>
+                <p class="text-sm italic text-gray-700 mt-1">
+                    Release Date: 09/09/2025 &nbsp; developer tyler banks
+                </p>
+<img src="file:///home/tyler/Documents/terry stuff /Screenshot_20260209_205421.png" alt="EtherOS Gen 3 Logo" width="200">
+                <div class="mt-4 p-3 bg-white border border-gray-600">
+                    <pre class="whitespace-pre-wrap text-sm leading-relaxed text-black">
+this os is still being worked the ETHEROS os is inspierd
+by TempleOS like i told yall its not done  yet  but the bootloder is here
+and soon the demo so this is ETHEROS 0.0.1
+
+
+the etheros programing  lan aka E will be its own
+lan bilt into Etheros it will have  a  lot  of commands
+and you can make it your own i will make it so you can add you own commands
+
+
+
+
+                    </pre>
+                </div>
+
+                <div class="mt-6 flex justify-center">
+                    <button id="featuredDownloadButton" class="download-button px-6 py-3 text-lg font-bold">
+                        coming  soon
+                    </button>
+                </div>
+            </div>
+
+            <!-- Rainbow footer -->
+            <div class="text-center pb-8">
+                <div id="rainbow-message-container" style="font-size:2rem;font-weight:bold;font-family:monospace;"></div>
+                <p class="mt-4 text-sm text-white">
+                    to support terry a davis and his family go to the tempelos website
+                    <a href="https://templeos.org/" class="text-blue-400 font-bold underline" target="_blank">https://templeos.org/</a>
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // Rainbow text
+        const container = document.getElementById('rainbow-message-container');
+        const text = "ETHER OS / TempleOS";
+        const colors = ['#AA0000','#FF5555','#FFFF55','#55FF55','#55FFFF','#5555FF','#FF55FF'];
+        container.innerHTML = text.split('').map(c => `<span>${c === ' ' ? '&nbsp;' : c}</span>`).join('');
+        const spans = container.querySelectorAll('span');
+        let offset = 0;
+        setInterval(() => {
+            spans.forEach((s, i) => s.style.color = colors[(i + offset) % colors.length]);
+            offset = (offset + 1) % colors.length;
+        }, 100);
+
+        // Install button
+        document.getElementById('featuredDownloadButton').addEventListener('click', () => {
+            alert('EtherOS is coming soon!');
+        });
+    </script>
+</body>
+</html>
